@@ -36,6 +36,12 @@
       border-radius: 8px;
       margin-bottom: 20px;
     }
+    iframe {
+      width: 100%;
+      height: 650px;
+      border: 1px solid #ccc;
+      margin: 10px 0 25px 0;
+    }
     a {
       color: #0b5fff;
       text-decoration: none;
@@ -56,18 +62,29 @@
 
 <h2>1. Overview</h2>
 <p>
-This project examines spatial patterns of housing affordability and commute time across the
-Washington, DC–Maryland–Virginia (DMV) region using census tract–level data from the
-American Community Survey (ACS) 2022.
+The project analyzes the spatial distribution of housing affordability and commuting time in the
+Washington, DC-Maryland-Virginia (DMV) area, with census tract-level
+American Community Survey (ACS) 2022. Cost of housing and cost of commute are major elements
+of daily accessibility and quality of life, and this distribution may indicate
+significant inequalities between neighborhoods.
+</p>
+
+<p>
+The use of both static and interactive maps in this project has enabled the creation of visualizations of how median
+The gross rent and mean commute time differ in census tracts, while emphasizing regions
+for missing or uncertain estimates. The interactive web map enables the user to view
+these patterns dynamically to compare layers and examine tract-level information via
+Hover tooltips. Overall, the graphs above enable a geographic analysis of housing
+and transportation issues in the DMV area.
 </p>
 
 <div class="box">
 <b>Project Components</b>
 <ul>
-  <li>Static Map 1: Median Gross Rent by census tract</li>
-  <li>Static Map 2: Mean Commute Time by census tract</li>
-  <li>Side-by-side comparison of rent and commute burden</li>
-  <li>Interactive web map with hover tooltips and layer toggles</li>
+  <li>Static Map 1: Median Gross Rent by census tract (ACS 2022)</li>
+  <li>Static Map 2: Mean Commute Time by census tract (ACS 2022)</li>
+  <li>Side-by-side comparison of housing cost and commute burden</li>
+  <li>Interactive web map with layer toggles and tract-level hover tooltips</li>
 </ul>
 </div>
 
@@ -75,8 +92,8 @@ American Community Survey (ACS) 2022.
 
 <h3>Static Map 1: Median Gross Rent by Census Tract (ACS 2022)</h3>
 <p class="small">
-Hatched tracts indicate low-confidence estimates where the coefficient of variation (CV) is
-40% or higher. Missing data are shown in gray.
+Hatched tracts indicate low-confidence estimates where the coefficient of variation (CV)
+is 40% or higher. Missing data are shown in gray.
 </p>
 <img src="median_rent_cv_map.png" alt="Median Gross Rent by Census Tract" />
 
@@ -95,17 +112,22 @@ Right: Mean Commute Time by census tract.
 </p>
 
 <img src="Housing Cost vs. Commute Burden (ACS 2022).png"
-     alt="Side-by-side comparison of rent and commute time" />
+     alt="Side-by-side comparison of housing cost and commute time" />
 
 <h2>4. Interactive Webmap</h2>
 <p>
-This interactive map allows users to toggle between median rent and commute time layers.
-Hovering over a census tract displays tract ID, median rent, median household income,
-and mean commute time. County boundaries are shown with thick outlines and labels.
+The interactive map below allows users to explore spatial patterns of housing cost and
+commute burden across the DMV region. Users can toggle between median gross rent and
+mean commute time layers, and hover over individual census tracts to view detailed
+information including tract ID, median rent, median household income, and mean commute
+time. County boundaries are displayed with thick outlines and labels to provide
+geographic context.
 </p>
 
-<p>
-<b>Open interactive map:</b>
+<iframe src="dmv_interactive.html"></iframe>
+
+<p class="small">
+Or view it as a separate web page:
 <a href="dmv_interactive.html">dmv_interactive.html</a>
 </p>
 
@@ -122,7 +144,7 @@ and mean commute time. County boundaries are shown with thick outlines and label
 <h3>Processing & Methods</h3>
 <ul>
   <li>Joined ACS attributes to census tract geometries using GEOID.</li>
-  <li> missing values handled and low-confidence estimates using CV ≥ 40% are flagged.</li>
+  <li>Handled missing values and flagged low-confidence estimates using CV ≥ 40%.</li>
   <li>Reprojected and simplified geometries for static and interactive mapping.</li>
 </ul>
 
@@ -134,3 +156,4 @@ and mean commute time. County boundaries are shown with thick outlines and label
 
 </body>
 </html>
+
