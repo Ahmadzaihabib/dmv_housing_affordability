@@ -57,7 +57,7 @@
 <h1>DMV Housing Affordability & Commute Time</h1>
 <p class="sub">
   <b>Author:</b> Habib Gul Ahmadzai |
-  <b>Course:</b> Command-Line GIS (Bloustein School of Planning and Public Policy, Rutgers University, Fall 2025)
+  <b>Course:</b> Command-Line GIS (Bloustein School of Planning and Public Policy, Rutgers University)
 </p>
 
 <h2>1. Overview</h2>
@@ -84,7 +84,7 @@ and transportation issues in the DMV area.
   <li>Static Map 1: Median Gross Rent by census tract (ACS 2022)</li>
   <li>Static Map 2: Mean Commute Time by census tract (ACS 2022)</li>
   <li>Side-by-side comparison of housing cost and commute burden</li>
-  <li>Interactive web map with layer toggles and tract-level hover tooltips</li>
+  <li>Interactive web map with layer toggles & tract level hover tooltips</li>
 </ul>
 </div>
 
@@ -92,36 +92,35 @@ and transportation issues in the DMV area.
 
 <h3>Static Map 1: Median Gross Rent by Census Tract (ACS 2022)</h3>
 <p class="small">
-Hatched tracts indicate low-confidence estimates where the coefficient of variation (CV)
-is 40% or higher. Missing data are shown in gray.
+The hatched tracts indicate low-confidence estimates where the coefficient of variation (CV)
+is 40% or higher. Al the missing data are shown in gray.
 </p>
 <img src="median_rent_cv_map.png" alt="Median Gross Rent by Census Tract" />
 
 <h3>Static Map 2: Mean Commute Time by Census Tract (ACS 2022)</h3>
 <p class="small">
-Mean one-way commute time in minutes. Missing data are shown in gray.
+Mean one-way commute time in minutes. Missing data shown in gray.
 </p>
 <img src="mean_commute_map.png" alt="Mean Commute Time by Census Tract" />
 
 <h2>3. Side-by-Side Comparison</h2>
 
-<h3>Housing Cost vs. Commute Burden (ACS 2022)</h3>
+<h3>Housing Cost vs Commute Burden (ACS 2022)</h3>
 <p class="small">
-Left: Median Gross Rent by census tract.  
-Right: Mean Commute Time by census tract.
+Left: Median Gross Rent by census tract  
+Right: Mean Commute Time by census tract
 </p>
 
-<img src="Housing Cost vs. Commute Burden (ACS 2022).png"
+<img src="Housing Cost vs Commute Burden (ACS 2022).png"
      alt="Side-by-side comparison of housing cost and commute time" />
 
 <h2>4. Interactive Webmap</h2>
 <p>
-The interactive map below allows users to explore spatial patterns of housing cost and
-commute burden across the DMV region. Users can toggle between median gross rent and
-mean commute time layers, and hover over individual census tracts to view detailed
-information including tract ID, median rent, median household income, and mean commute
-time. County boundaries are displayed with thick outlines and labels to provide
-geographic context.
+The interactive map that follow is used to investigate the geographic distribution of housing prices and
+commute burden in the DMV area. Users can switch between median gross rent and median household value. Median Gross Rent vs. Median Household Value
+mean commute time layers, and hover over individual census tracts to view detailes
+Including data such as information about the tract ID, median rent, median household income, and mean commute time.
+The county lines are shown in thick white lines and labeled so that geographic context.
 </p>
 
 <iframe src="dmv_interactive.html"></iframe>
@@ -143,9 +142,9 @@ Or view it as a separate web page:
 
 <h3>Processing & Methods</h3>
 <ul>
-  <li>Joined ACS attributes to census tract geometries using GEOID.</li>
-  <li>Handled missing values and flagged low-confidence estimates using CV ≥ 40%.</li>
-  <li>Reprojected and simplified geometries for static and interactive mapping.</li>
+  <li>ACS attributes to census tract geometries are joined using GEOID.</li>
+  <li>Missing values and flagged low-confidence estimates using CV ≥ 40% are handled.</li>
+  <li>Geometries for static and interactive mapping are reprojected and simplified.</li>
 </ul>
 
 <h3>Data Quality Notes</h3>
